@@ -1,1 +1,3 @@
-# client
+# Vision Statement
+
+We plan to develop an application for both iOS and Android intended for ping-pong players at Calvin. The name of the app is SnapPong. We decided to build this app because ping pong players in Calvin wanted a way to keep track of their scores and wins. It integrates the social aspects of snapchat with the competitve aspects of ping pong compared to the rudimentary and scattered means of keeping track of wins/scores. As there are no similar applications currently available, this app will provide useful functions such as sending game requests via Snapchat and displaying leaderboards of the users. Our primary focus will be the integration of Snapchat, which will allow users to log in using their Snapchat IDs, which creates a familiar environment for new users.
