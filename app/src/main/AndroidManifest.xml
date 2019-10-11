@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <meta-data android:name="com.snapchat.kit.sdk.clientId" android:value="your app’s client id" />
-        <meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="https://auth.snapchat.com/oauth2/api/user.bitmoji.avatar" />
+        <meta-data android:name="com.snapchat.kit.sdk.clientId" android:value="1cb5158b-3e4f-45ae-94dd-2b11c74aeb6b" />
+        <meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="https://docs.snapchat.com/docs/sample-code/" />
         <meta-data android:name="com.snapchat.kit.sdk.scopes" android:resource="@array/snap_connect_scopes" />
 
         <activity android:name=".MainActivity">
