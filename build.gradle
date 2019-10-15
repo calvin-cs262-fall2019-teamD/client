@@ -16,6 +16,9 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url "https://raw.githubusercontent.com/Snap-Kit/release-maven/repo"
+        }
         google()
         jcenter()
         

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.snapchat.kit.sdk.SnapLogin;
+import com.snapchat.kit.sdk.core.controller.LoginStateController; // Import needed for LoginStateControllerd
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +25,30 @@ public class MainActivity extends AppCompatActivity {
                 SnapLogin.getAuthTokenManager(getApplicationContext()).startTokenGrant();
             }
         });
-//        ViewGroup mViewRoot = findViewById(R.id.rootview);
-//        View mLoginButton = SnapLogin.getButton(this, mViewRoot );
+
+        final LoginStateController.OnLoginStateChangedListener mLoginStateChangedListener =
+                new LoginStateController.OnLoginStateChangedListener() {
+                    @Override
+                    public void onLoginSucceeded() {
+                        // Here you could update UI to show login success
+                    }
+
+                    @Override
+                    public void onLoginFailed() {
+                        // Here you could update UI to show login failure
+                    }
+
+                    @Override
+                    public void onLogout() {
+                        // Here you could update UI to reflect logged out state
+                    }
+                };
+
+        // Add the LoginStateChangedListener you’ve defined to receive LoginInState updates
+        SnapLogin.getLoginStateController(getApplicationContext()).addOnLoginStateChangedListener(mLoginStateChangedListener);
+
+        //checking if the user is currently logged in
+        boolean isUserLoggedIn = SnapLogin.isUserLoggedIn(getApplicationContext());
+
     }
 }
