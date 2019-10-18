@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SnapPong</string>
+    <string name="user_profile">User Profile</string>
 </resources>
