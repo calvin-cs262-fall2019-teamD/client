@@ -1,13 +1,11 @@
-package edu.calvin.cs262.snappong;
+package edu.calvin.cs262.fdn2;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.snapchat.kit.sdk.SnapLogin;
 import com.snapchat.kit.sdk.core.controller.LoginStateController; // Import needed for LoginStateControllerd
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.calvin.cs262.snappong">
+    package="edu.calvin.cs262.fdn2">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -16,7 +16,7 @@
         <meta-data android:name="com.snapchat.kit.sdk.redirectUrl" android:value="https://docs.snapchat.com/docs/sample-code/" />
         <meta-data android:name="com.snapchat.kit.sdk.scopes" android:resource="@array/snap_connect_scopes" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name="edu.calvin.cs262.fdn2.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
