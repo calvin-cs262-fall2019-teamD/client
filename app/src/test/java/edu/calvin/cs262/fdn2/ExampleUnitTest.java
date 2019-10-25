@@ -1,4 +1,4 @@
-package edu.calvin.cs262.snappong;
+package edu.calvin.cs262.fdn2;
 
 import org.junit.Test;
 
