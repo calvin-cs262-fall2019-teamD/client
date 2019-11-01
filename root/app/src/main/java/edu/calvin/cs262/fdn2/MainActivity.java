@@ -1,33 +1,18 @@
 package edu.calvin.cs262.fdn2;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.snapchat.kit.sdk.SnapLogin;
-import com.snapchat.kit.sdk.core.controller.LoginStateController; // Import needed for LoginStateControllerd
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.snapchat.kit.sdk.SnapLogin;
+import com.snapchat.kit.sdk.core.controller.LoginStateController;
+
 public class MainActivity extends AppCompatActivity {
 
-   /* RecyclerView recyclerview;
-    String[] thescores = {"2-21", "15-21", "21-5", "21-9", "19-21"};
-    String[] thewinrates = {"80", "60", "40", "84", "66"};
-    UserProfileScreenAdapter adapter;*/
-
-       /* setContentView(R.layout.activity_main);
-
-        recyclerview = findViewById(R.id.recyclerView);
-
-        UserProfileScreenAdapter adapter = new UserProfileScreenAdapter(thescores, thewinrates);
-
-        recyclerview.setAdapter(adapter);
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
-
-        recyclerview.setLayoutManager(layoutManager);*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +53,24 @@ public class MainActivity extends AppCompatActivity {
 
         //checking if the user is currently logged in
         boolean isUserLoggedIn = SnapLogin.isUserLoggedIn(getApplicationContext());
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /* TO BERNARD: Tried to create a button to open up the User Profile Screen on the main page to test if it works but was not able to get it to work.
+        *  Once integrated, everything should work... hopefully*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        Button userProfileButton = findViewById(R.id.UserProfileButton);
+        userProfileButton.setOnClickListener(new View.OnClickListener() {
+
+
+            public void onClick(View v) {
+                Intent userProfileIntent = new Intent(getApplicationContext(), UserProfileScreen.class);
+                startActivity(userProfileIntent);
+            }
+        });
+
 
     }
 }
