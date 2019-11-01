@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".User_Profile"></activity>
+        <activity android:name=".UserProfileScreen"></activity>
+        <activity android:name=".UserProfileScreenAdapter" />
 
         <meta-data
             android:name="com.snapchat.kit.sdk.clientId"
@@ -23,7 +24,7 @@
             android:name="com.snapchat.kit.sdk.scopes"
             android:resource="@array/snap_connect_scopes" />
 
-        <activity android:name="edu.calvin.cs262.fdn2.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
