@@ -13,16 +13,18 @@ import com.snapchat.kit.sdk.core.controller.LoginStateController;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
-        Button login = findViewById(R.id.login_butt);
+        //access the login button
+        login = findViewById(R.id.login_butt);
 
 
+        //this function sends us to snapchat to get the data.
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,16 +56,9 @@ public class MainActivity extends AppCompatActivity {
         //checking if the user is currently logged in
         boolean isUserLoggedIn = SnapLogin.isUserLoggedIn(getApplicationContext());
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        /* TO BERNARD: Tried to create a button to open up the User Profile Screen on the main page to test if it works but was not able to get it to work.
-        *  Once integrated, everything should work... hopefully*/
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
         Button userProfileButton = findViewById(R.id.UserProfileButton);
         userProfileButton.setOnClickListener(new View.OnClickListener() {
-
 
             public void onClick(View v) {
                 Intent userProfileIntent = new Intent(getApplicationContext(), UserProfileScreen.class);
@@ -72,5 +67,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void gotoLeaderboard(View view) {
+        Intent leaderboardIntent = new Intent(getApplicationContext(), LeaderBoardScreen.class);
+        startActivity(leaderboardIntent);
     }
 }

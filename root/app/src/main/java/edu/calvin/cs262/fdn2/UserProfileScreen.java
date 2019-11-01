@@ -16,16 +16,21 @@ public class UserProfileScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_user_profile_screen);
 
+        //get our recyclerview
         recyclerview = findViewById(R.id.recyclerView);
 
-        UserProfileScreenAdapter adapter = new UserProfileScreenAdapter(thescores, thewinrates);
+        //get our adapter to display the values
+        adapter = new UserProfileScreenAdapter(thescores, thewinrates);
 
+        //set our adapter for our recycler view
         recyclerview.setAdapter(adapter);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(UserProfileScreen.this);
+        //get the layout structure for our recyclerview
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
 
+        //set the layout structure
         recyclerview.setLayoutManager(layoutManager);
     }
 }
