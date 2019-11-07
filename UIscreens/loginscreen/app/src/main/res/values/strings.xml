@@ -1,8 +1,5 @@
 <resources>
-    <string name="app_name">SnapPong</string>
-    <string name="user_profile">User Profile</string>
-    <string name="user_profile_screen">User Profile Screen</string>
-<<<<<<< HEAD
+    <string name="app_name">login screen</string>
     <string name="question">Are you ready to compete?</string>
     <string name="login_button">Log In</string>
     <string name="snapPong">SnapPong</string>
@@ -10,7 +7,4 @@
     <string name="pinpong_png_login">pingpong png displayed on login screen</string>
     <string name="login_bitmoji">bitmoji png displayed on the login screen</string>
     <string name="login">Login</string>
-=======
-    <string name="challenge_player">Challenge Player</string>
->>>>>>> 1093f1f0ab24cf3d356cde05ea9a7c5f903515ab
 </resources>
