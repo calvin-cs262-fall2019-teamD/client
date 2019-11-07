@@ -20,17 +20,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //access the login button
-        login = findViewById(R.id.login_butt);
-
-
-        //this function sends us to snapchat to get the data.
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SnapLogin.getAuthTokenManager(getApplicationContext()).startTokenGrant();
-            }
-        });
 
         final LoginStateController.OnLoginStateChangedListener mLoginStateChangedListener =
                 new LoginStateController.OnLoginStateChangedListener() {
@@ -57,12 +46,13 @@ public class MainActivity extends AppCompatActivity {
         boolean isUserLoggedIn = SnapLogin.isUserLoggedIn(getApplicationContext());
 
 
-        Button userProfileButton = findViewById(R.id.UserProfileButton);
-        userProfileButton.setOnClickListener(new View.OnClickListener() {
+        login = findViewById(R.id.login_button);
+        login.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                Intent userProfileIntent = new Intent(getApplicationContext(), UserProfileScreen.class);
+                Intent userProfileIntent = new Intent(getApplicationContext(), LeaderBoardScreen.class);
                 startActivity(userProfileIntent);
+                finish();
             }
         });
 

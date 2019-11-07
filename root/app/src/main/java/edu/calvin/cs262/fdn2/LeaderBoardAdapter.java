@@ -1,6 +1,7 @@
 package edu.calvin.cs262.fdn2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,6 +59,9 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
         holder.profilecardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+//                Intent userprofileIntent = new Intent(mContext, UserProfileScreen.class);
+//                mContext.getApplicationContext().startActivity(userprofileIntent);
 
                 //displays a toast about which player rank you have clicked
                 Toast.makeText(mContext,"Clicked on player rank " + String.valueOf(position + 4), Toast.LENGTH_SHORT).show();

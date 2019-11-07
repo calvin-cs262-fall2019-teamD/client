@@ -2,6 +2,7 @@ package edu.calvin.cs262.fdn2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -40,23 +41,24 @@ public class LeaderBoardScreen extends AppCompatActivity {
     public void profileClicked(View view) {
         //we get the ID of particular view which is clicked
         int profileId = view.getId();
+        Intent userprofileIntent = new Intent(this, UserProfileScreen.class);
 
         //we then use the ID to check against the various ID's we set in our activity_main.xml file
         switch (profileId){
             case R.id.rank1bitmoji:
-                Toast.makeText(this, "Rank 1 player",Toast.LENGTH_SHORT).show();
+                startActivity(userprofileIntent);
                 break;
 
             case R.id.rank2bitmoji:
-                Toast.makeText(this, "Rank 2 player",Toast.LENGTH_SHORT).show();
+                startActivity(userprofileIntent);
                 break;
 
             case R.id.rank3bitmoji:
-                Toast.makeText(this, "Rank 3 player",Toast.LENGTH_SHORT).show();
+                startActivity(userprofileIntent);
                 break;
 
             default:
-                Toast.makeText(this, "Clicked on a User Profile!",Toast.LENGTH_SHORT).show();
+                startActivity(userprofileIntent);
                 break;
         }
     }
