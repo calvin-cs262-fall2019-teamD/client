@@ -1,31 +1,22 @@
-package edu.calvin.cs262.fdn2;
+package edu.calvin.cs262.loginscreen;
 
-import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
+import com.snapchat.kit.sdk.SnapLogin;
+import com.snapchat.kit.sdk.core.controller.LoginStateController; // Import needed for LoginStateController
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.snapchat.kit.sdk.SnapLogin;
-import com.snapchat.kit.sdk.core.controller.LoginStateController;
-
 public class MainActivity extends AppCompatActivity {
-
-    Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //access the login button
-        login = findViewById(R.id.login_butt);
-
-
-        //this function sends us to snapchat to get the data.
-        login.setOnClickListener(new View.OnClickListener() {
+        Button login_btn = findViewById(R.id.login_button);
+        login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SnapLogin.getAuthTokenManager(getApplicationContext()).startTokenGrant();
@@ -51,26 +42,11 @@ public class MainActivity extends AppCompatActivity {
                 };
 
         // Add the LoginStateChangedListener you’ve defined to receive LoginInState updates
-        SnapLogin.getLoginStateController(getApplicationContext()).addOnLoginStateChangedListener(mLoginStateChangedListener);
+        SnapLogin.getLoginStateController(getApplicationContext()).addOnLoginStateChangedListener
+                (mLoginStateChangedListener);
 
         //checking if the user is currently logged in
         boolean isUserLoggedIn = SnapLogin.isUserLoggedIn(getApplicationContext());
 
-
-        Button userProfileButton = findViewById(R.id.UserProfileButton);
-        userProfileButton.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                Intent userProfileIntent = new Intent(getApplicationContext(), UserProfileScreen.class);
-                startActivity(userProfileIntent);
-            }
-        });
-
-
-    }
-
-    public void gotoLeaderboard(View view) {
-        Intent leaderboardIntent = new Intent(getApplicationContext(), LeaderBoardScreen.class);
-        startActivity(leaderboardIntent);
     }
 }
