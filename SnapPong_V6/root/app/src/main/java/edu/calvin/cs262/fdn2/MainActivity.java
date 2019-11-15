@@ -1,21 +1,15 @@
 package edu.calvin.cs262.fdn2;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.snapchat.kit.sdk.SnapLogin;
 import com.snapchat.kit.sdk.core.controller.LoginStateController;
 
 public class MainActivity extends AppCompatActivity {
-
-    Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //access the login button
-        login = findViewById(R.id.login_button);
-
+        Button login = findViewById(R.id.login_button);
 
 
 //        TODO://this function sends us to snapchat to get the data.
@@ -61,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
         boolean isUserLoggedIn = SnapLogin.isUserLoggedIn(getApplicationContext());
 
 
+    }
 
+    public void gotoLeaderboard(View view) {
     }
 
 

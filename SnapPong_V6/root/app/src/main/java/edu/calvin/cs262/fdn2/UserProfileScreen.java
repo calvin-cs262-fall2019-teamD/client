@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class UserProfileScreen extends AppCompatActivity {
 
-    RecyclerView recyclerview;
-    String[] thescores = {"2-21", "1-21", "21-5", "21-9", "2-21"};
-    String[] thewinrates = {"80", "60", "40", "84", "66"};
-    UserProfileScreenAdapter adapter;
+    private RecyclerView recyclerview;
+    private String[] thescores = {"2-21", "1-21", "21-5", "21-9", "2-21"};
+    private String[] thewinrates = {"80", "60", "40", "84", "66"};
+    private UserProfileScreenAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

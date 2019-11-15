@@ -1,7 +1,6 @@
 package edu.calvin.cs262.fdn2;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,9 +37,9 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
     }
 
     /**
-     * This is where the data of the Player is bounded to the UI elements
-     * @param holder
-     * @param position
+     * This is where the data of the Player is bound to the UI elements
+     * @param holder A ViewHolder class
+     * @param position The position in RecyclerView
      */
     @Override
     public void onBindViewHolder(@NonNull LeaderBoardViewHolder holder, final int position) {
@@ -60,7 +59,7 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
             public void onClick(View view) {
 
                 //displays a toast about which player rank you have clicked
-                Toast.makeText(mContext,"Clicked on player rank " + String.valueOf(position + 4), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext,"Clicked on player rank " + (position + 4), Toast.LENGTH_SHORT).show();
             }
         });
     }

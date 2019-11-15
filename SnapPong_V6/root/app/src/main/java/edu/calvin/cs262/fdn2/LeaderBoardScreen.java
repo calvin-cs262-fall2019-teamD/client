@@ -7,16 +7,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.widget.Toast;
 
 
 public class LeaderBoardScreen extends AppCompatActivity {
-
-    RecyclerView recyclerView;
-    LeaderBoardAdapter adapter;
 
     //we create a random set of elo values and winRates to be displayed
     private String[] randomElos = {"578697","475425","465693","455731","374657","364291","321697","245594","271456","213477"};
@@ -37,12 +33,10 @@ public class LeaderBoardScreen extends AppCompatActivity {
         Toast.makeText(getBaseContext(),"Welcome to SnapPong!", Toast.LENGTH_SHORT).show();
 
 
-
-
-        recyclerView = findViewById(R.id.recyclerview2);
+        RecyclerView recyclerView = findViewById(R.id.recyclerview2);
 
         //we pass into our adapter random elos and win rates to be displayed every time
-        adapter = new LeaderBoardAdapter(this, randomElos,randomWinrate);
+        LeaderBoardAdapter adapter = new LeaderBoardAdapter(this, randomElos, randomWinrate);
 
         //we set the layoutmanager for our recyclerview
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -53,13 +47,13 @@ public class LeaderBoardScreen extends AppCompatActivity {
     }
 
 
-    public void gotoUserProfileScreen(){
+    private void gotoUserProfileScreen(){
         Intent userProfileIntent = new Intent(getApplicationContext(), UserProfileScreen.class);
         startActivity(userProfileIntent);
     }
 
 
-    public void gotoGameRequestScreen(){
+    private void gotoGameRequestScreen(){
         Intent userProfileIntent = new Intent(getApplicationContext(), GameRequestScreen.class);
         startActivity(userProfileIntent);
     }
@@ -81,8 +75,6 @@ public class LeaderBoardScreen extends AppCompatActivity {
                 break;
 
             case R.id.rank2bitmoji:
-                gotoUserProfileScreen();
-                break;
 
             case R.id.rank3bitmoji:
                 gotoUserProfileScreen();
