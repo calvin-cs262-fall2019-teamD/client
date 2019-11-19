@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2B2B2B"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/question"
+        android:textColor="#B9B3B3"
+        android:textSize="15sp"
+        app:fontFamily="@font/helvetica_neue_thin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:background="@drawable/rounded_rectangle"
+        android:text="@string/login_button"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        app:fontFamily="@font/helvetica_neue_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question" />
+
+    <TextView
+        android:id="@+id/login_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_prompt"
+        android:textColor="#B9B3B3"
+        app:fontFamily="@font/helvetica_neue_thin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_button"
+        app:layout_constraintVertical_bias="0.222" />
+
+    <TextView
+        android:id="@+id/snapPong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/snapPong"
+        android:textColor="#B9B3B3"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/helvetica_neue_bold"
+        app:layout_constraintBottom_toTopOf="@+id/question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.919" />
+
+    <ImageView
+        android:id="@+id/pingpong_png"
+        android:layout_width="206dp"
+        android:layout_height="161dp"
+        android:contentDescription="@string/pinpong_png_login"
+        app:layout_constraintBottom_toTopOf="@+id/snapPong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/pingpong" />
+
+    <ImageView
+        android:id="@+id/login_bitmoji"
+        android:layout_width="167dp"
+        android:layout_height="153dp"
+        android:contentDescription="@string/login_bitmoji"
+        app:layout_constraintBottom_toTopOf="@+id/pingpong_png"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/mybitmoji" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

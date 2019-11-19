@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SnapPong</string>
+    <string name="user_profile">User Profile</string>
+    <string name="user_profile_screen">User Profile Screen</string>
+    <string name="logout_icon">Logout</string>
+    <string name="nav_profile">My Profile</string>
+    <string name="nav_leaderboard">Leaderboard</string>
+    <string name="nav_request_game">Request Game</string>
+    <string name="nav_logout">Logout</string>
+    <string name="question">Are you ready to compete?</string>
+    <string name="login_button">Log In</string>
+    <string name="snapPong">SnapPong</string>
+    <string name="login_prompt">Log in using your snapchat account</string>
+    <string name="pinpong_png_login">pingpong png displayed on login screen</string>
+    <string name="login_bitmoji">bitmoji png displayed on the login screen</string>
+    <string name="login">Login</string>
+</resources>
