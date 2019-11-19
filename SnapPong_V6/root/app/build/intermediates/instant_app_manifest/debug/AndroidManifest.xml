@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.calvin.cs262.snappong"
+    android:targetSandboxVersion="2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="29" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_snapponglogo1"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="edu.calvin.cs262.fdn2.GameRequestScreen" />
+
+        <meta-data
+            android:name="com.snapchat.kit.sdk.clientId"
+            android:value="1cb5158b-3e4f-45ae-94dd-2b11c74aeb6b" />
+        <meta-data
+            android:name="com.snapchat.kit.sdk.redirectUrl"
+            android:value="myapp://snap-kit/oauth2" />
+        <meta-data
+            android:name="com.snapchat.kit.sdk.scopes"
+            android:resource="@array/snap_connect_scopes" />
+
+        <activity
+            android:name="edu.calvin.cs262.fdn2.MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="edu.calvin.cs262.fdn2.LeaderBoardScreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="snap-kit"
+                    android:path="/oauth2"
+                    android:scheme="myapp" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="edu.calvin.cs262.fdn2.UserProfileScreen"
+            android:parentActivityName="edu.calvin.cs262.fdn2.LeaderBoardScreen" />
+    </application>
+
+</manifest>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/user_profile_icon"
+            android:title="@string/nav_profile" />
+        <item
+            android:id="@+id/nav_leaderboard"
+            android:icon="@drawable/leaderboard_icon"
+            android:title="@string/nav_leaderboard" />
+        <item
+            android:id="@+id/nav_game_request"
+            android:icon="@drawable/game_request_icon"
+            android:title="@string/nav_request_game" />
+    </group>
+
+    <item android:title="@string/nav_logout">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/logout_icon"
+                android:title="@string/nav_logout" />
+        </menu>
+    </item>
+
+</menu>
