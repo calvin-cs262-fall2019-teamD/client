@@ -1,6 +1,7 @@
 package edu.calvin.cs262.fdn2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -78,8 +79,10 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
             @Override
             public void onClick(View view) {
 
-                //displays a toast about which player rank you have clicked
-                Toast.makeText(mContext, "Clicked on player rank " + String.valueOf(position + 4), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, UserProfileScreen.class);
+                mContext.startActivity(intent);
+//                //displays a toast about which player rank you have clicked
+//                Toast.makeText(mContext, "Clicked on player rank " + String.valueOf(position + 4), Toast.LENGTH_SHORT).show();
             }
         });
         holder.profilecardview.setOnLongClickListener(new View.OnLongClickListener() {

@@ -28,13 +28,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-////        TODO://this function sends us to snapchat to get the data.
-//        login.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                SnapLogin.getAuthTokenManager(getApplicationContext()).startTokenGrant();
-//            }
-//        });
+
+        TODO://this function sends us to snapchat to get the data.
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SnapLogin.getAuthTokenManager(getApplicationContext()).startTokenGrant();
+            }
+        });
+
 
         final LoginStateController.OnLoginStateChangedListener mLoginStateChangedListener =
                 new LoginStateController.OnLoginStateChangedListener() {
@@ -65,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //TODO:Change this to snapchat using the commented code above
-    public void gotoLeaderboard(View view) {
-        Intent leaderboardIntent = new Intent(getApplicationContext(), LeaderBoardScreen.class);
-        startActivity(leaderboardIntent);
-    }
+//    //TODO:Change this to snapchat using the commented code above
+//    public void gotoLeaderboard(View view) {
+//        Intent leaderboardIntent = new Intent(getApplicationContext(), LeaderBoardScreen.class);
+//        startActivity(leaderboardIntent);
+//    }
 }
