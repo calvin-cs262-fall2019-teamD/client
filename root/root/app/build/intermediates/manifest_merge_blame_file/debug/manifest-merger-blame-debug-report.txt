@@ -1,0 +1,118 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="edu.calvin.cs262.snappong"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:5:5-67
+11-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:5:22-64
+12
+13    <application
+13-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:7:5-60:19
+14        android:allowBackup="true"
+14-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:8:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.1.0] /home/fdn2/.gradle/caches/transforms-2/files-2.1/7f6c41cc2a14c0fbaa8d0166c17dc544/core-1.1.0/AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:icon="@mipmap/ic_snapponglogo1"
+17-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:9:9-48
+18        android:label="@string/app_name"
+18-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:10:9-41
+19        android:roundIcon="@mipmap/ic_launcher_round"
+19-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:11:9-54
+20        android:supportsRtl="true"
+20-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:12:9-35
+21        android:testOnly="true"
+22        android:theme="@style/AppTheme" >
+22-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:13:9-40
+23        <activity
+23-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:14:9-17:20
+24            android:name="edu.calvin.cs262.fdn2.GameRequestScreen"
+24-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:14:19-52
+25            android:label="GameRequest" >
+25-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:15:13-40
+26        </activity>
+27
+28        <meta-data
+28-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:19:9-21:68
+29            android:name="com.snapchat.kit.sdk.clientId"
+29-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:20:13-57
+30            android:value="1cb5158b-3e4f-45ae-94dd-2b11c74aeb6b" />
+30-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:21:13-65
+31        <meta-data
+31-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:22:9-24:55
+32            android:name="com.snapchat.kit.sdk.redirectUrl"
+32-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:23:13-60
+33            android:value="myapp://snap-kit/oauth2" />
+33-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:24:13-52
+34        <meta-data
+34-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:25:9-27:61
+35            android:name="com.snapchat.kit.sdk.scopes"
+35-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:26:13-55
+36            android:resource="@array/snap_connect_scopes" />
+36-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:27:13-58
+37
+38        <activity
+38-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:29:9-38:20
+39            android:name="edu.calvin.cs262.fdn2.MainActivity"
+39-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:30:13-41
+40            android:theme="@style/Theme.AppCompat.NoActionBar" >
+40-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:31:13-63
+41            <intent-filter>
+41-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:32:13-35:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:33:17-69
+42-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:33:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:34:17-77
+44-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:34:27-74
+45            </intent-filter>
+46        </activity>
+47        <activity
+47-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:39:9-53:20
+48            android:name="edu.calvin.cs262.fdn2.LeaderBoardScreen"
+48-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:40:13-46
+49            android:label="LeaderBoard" >
+49-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:41:13-40
+50            <intent-filter>
+50-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:42:13-52:29
+51                <action android:name="android.intent.action.VIEW" />
+51-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:43:17-69
+51-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:43:25-66
+52
+53                <category android:name="android.intent.category.DEFAULT" />
+53-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:45:17-76
+53-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:45:27-73
+54                <category android:name="android.intent.category.BROWSABLE" />
+54-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:46:17-78
+54-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:46:27-75
+55
+56                <data
+56-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:48:17-51:46
+57                    android:host="snap-kit"
+57-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:49:21-44
+58                    android:path="/oauth2"
+58-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:50:21-43
+59                    android:scheme="myapp" />
+59-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:51:21-43
+60            </intent-filter>
+61        </activity>
+62        <activity
+62-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:55:9-58:72
+63            android:name="edu.calvin.cs262.fdn2.UserProfileScreen"
+63-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:56:13-46
+64            android:label="User Profile"
+64-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:57:13-41
+65            android:parentActivityName="edu.calvin.cs262.fdn2.LeaderBoardScreen" />
+65-->/home/fdn2/myGitRepo/client/SnapPong_V7/root/app/src/main/AndroidManifest.xml:58:13-60
+66    </application>
+67
+68</manifest>
