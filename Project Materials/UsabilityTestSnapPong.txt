@@ -20,11 +20,11 @@ Before we try out the app, we have a few questions for you. Do you play ping pon
 
 The Test
 
-1. 
+1. We have integrated SnapChat's API for ease of login. Can you login to the app through SnapChat?
 
-2.
+2. You can view your own user profile page. Try viewing your own.
 
-3.
+3. You can view other user's profiles. Try viewing Mr. Bond's page.
 
-4.
+4. The leaderboard is interactive. Try finding the 10th ranked player on the leaderboard. 
 
