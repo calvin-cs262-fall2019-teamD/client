@@ -3,14 +3,18 @@ package edu.calvin.cs262.fdn2;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.snapchat.kit.sdk.Bitmoji;
 import com.snapchat.kit.sdk.SnapLogin;
+import com.snapchat.kit.sdk.bitmoji.networking.FetchAvatarUrlCallback;
 import com.snapchat.kit.sdk.core.controller.LoginStateController;
 
 public class MainActivity extends AppCompatActivity {

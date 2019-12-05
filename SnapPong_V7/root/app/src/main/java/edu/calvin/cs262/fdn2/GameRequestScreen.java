@@ -1,10 +1,12 @@
 package edu.calvin.cs262.fdn2;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,6 +14,9 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.snapchat.kit.sdk.Bitmoji;
+import com.snapchat.kit.sdk.bitmoji.networking.FetchAvatarUrlCallback;
 
 public class GameRequestScreen extends AppCompatActivity {
 
@@ -37,11 +42,9 @@ public class GameRequestScreen extends AppCompatActivity {
      */
 
     public void sendGameRequest(View view) {
-        Toast.makeText(this,"Sending Game Request...",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this,"Sending Game Request...",Toast.LENGTH_SHORT).show();
 
-        //TODO:Let the other person's bitmoji change.
-//        //changing the second player's icon
-//        secondplayer.setImageResource(R.drawable.fakefriend);
+
     }
 
 

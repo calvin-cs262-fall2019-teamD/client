@@ -1,6 +1,7 @@
 package edu.calvin.cs262.fdn2;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,6 +19,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.snapchat.kit.sdk.Bitmoji;
+import com.snapchat.kit.sdk.bitmoji.networking.FetchAvatarUrlCallback;
 
 
 public class LeaderBoardScreen extends AppCompatActivity {
@@ -42,6 +46,8 @@ public class LeaderBoardScreen extends AppCompatActivity {
         Intent intent = getIntent();
         String action = intent.getAction();
         Uri data = intent.getData();
+
+
 
 //        Toast.makeText(getBaseContext(),"Welcome to SnapPong!", Toast.LENGTH_SHORT).show();
 
