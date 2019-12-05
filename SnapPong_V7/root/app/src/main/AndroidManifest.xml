@@ -6,15 +6,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_snapponglogo1"
+        android:icon="@drawable/pingpong"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GameRequestScreen"
-            android:label="GameRequest">
 
-        </activity>
 
         <meta-data
             android:name="com.snapchat.kit.sdk.clientId"
@@ -54,8 +51,13 @@
 
         <activity
             android:name=".UserProfileScreen"
-            android:label="User Profile"
-            android:parentActivityName=".LeaderBoardScreen"></activity>
+            android:label="User Profile">
+        </activity>
+
+        <activity
+            android:name=".GameRequestScreen"
+            android:label="Game Request">
+        </activity>
 
     </application>
 

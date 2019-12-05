@@ -73,6 +73,12 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
         holder.elo.setText(eloData[position]);
         holder.winrate.setText(winRateData[position]);
 
+        //increase the change rate by 1
+        String increasedChangeRate = position+1 + "+";
+
+        //changing the change rate to increase by 1
+        holder.changingrate.setText(increasedChangeRate);
+
         //we bind each card view created to a dummy function which displays the particular rank of the player
         holder.profilecardview.setOnClickListener(new View.OnClickListener() {
             @Override
