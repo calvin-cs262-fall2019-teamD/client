@@ -21,7 +21,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.snapchat.kit.sdk.Bitmoji;
+import com.snapchat.kit.sdk.SnapLogin;
 import com.snapchat.kit.sdk.bitmoji.networking.FetchAvatarUrlCallback;
+import com.snapchat.kit.sdk.login.models.MeData;
+import com.snapchat.kit.sdk.login.models.UserDataResponse;
+import com.snapchat.kit.sdk.login.networking.FetchUserDataCallback;
+
+import java.util.Map;
 
 
 public class LeaderBoardScreen extends AppCompatActivity {
@@ -29,6 +35,10 @@ public class LeaderBoardScreen extends AppCompatActivity {
     RecyclerView recyclerView;
     LeaderBoardAdapter adapter;
 
+
+    String query = "{me{bitmoji{avatar},displayName}}";
+    Map<String ,Object> variables = null;
+    String username = "empty";
 
     //we create a random set of elo values and winRates to be displayed
     private String[] randomElos = {"578697","475425","465693","455731","374657","364291","321697","245594","271456","213477"};
@@ -46,6 +56,32 @@ public class LeaderBoardScreen extends AppCompatActivity {
         Intent intent = getIntent();
         String action = intent.getAction();
         Uri data = intent.getData();
+
+        Log.d("myusername", data.toString());
+
+        SnapLogin.fetchUserData(this, query, variables, new FetchUserDataCallback() {
+            @Override
+            public void onSuccess(@Nullable UserDataResponse userDataResponse) {
+
+                if (userDataResponse == null || userDataResponse.getData() == null) {
+                    return;
+                }
+                MeData meData = userDataResponse.getData().getMe();
+                if (meData == null){
+                    return;
+                }
+
+                username = meData.getDisplayName();
+
+            }
+
+
+
+            @Override
+            public void onFailure(boolean b, int i) {
+                Log.d("myusername", username);
+            }
+        });
 
 
 

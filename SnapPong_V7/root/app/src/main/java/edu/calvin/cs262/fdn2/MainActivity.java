@@ -16,10 +16,16 @@ import com.snapchat.kit.sdk.Bitmoji;
 import com.snapchat.kit.sdk.SnapLogin;
 import com.snapchat.kit.sdk.bitmoji.networking.FetchAvatarUrlCallback;
 import com.snapchat.kit.sdk.core.controller.LoginStateController;
+import com.snapchat.kit.sdk.login.models.MeData;
+import com.snapchat.kit.sdk.login.models.UserDataResponse;
+import com.snapchat.kit.sdk.login.networking.FetchUserDataCallback;
+
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     Button login;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,26 +49,19 @@ public class MainActivity extends AppCompatActivity {
         final LoginStateController.OnLoginStateChangedListener mLoginStateChangedListener =
                 new LoginStateController.OnLoginStateChangedListener() {
                     @Override
-                    public void onLoginSucceeded() {
-
-                    }
+                    public void onLoginSucceeded() { }
 
                     @Override
-                    public void onLoginFailed() {
-                        // Here you could update UI to show login failure
-                    }
+                    public void onLoginFailed() { }
 
                     @Override
-                    public void onLogout() {
-                        // Here you could update UI to reflect logged out state
-                    }
+                    public void onLogout() { }
                 };
 
         // Add the LoginStateChangedListener you’ve defined to receive LoginInState updates
         SnapLogin.getLoginStateController(getApplicationContext()).addOnLoginStateChangedListener(mLoginStateChangedListener);
 
-        //checking if the user is currently logged in
-        boolean isUserLoggedIn = SnapLogin.isUserLoggedIn(getApplicationContext());
+
 
 
 
