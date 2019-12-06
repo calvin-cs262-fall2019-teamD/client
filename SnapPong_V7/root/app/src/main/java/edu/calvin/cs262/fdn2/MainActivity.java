@@ -25,7 +25,9 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     Button login;
-
+    String query = "{me{bitmoji{avatar},displayName}}";
+    Map<String ,Object> variables = null;
+    public String username = "empty";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,34 @@ public class MainActivity extends AppCompatActivity {
         final LoginStateController.OnLoginStateChangedListener mLoginStateChangedListener =
                 new LoginStateController.OnLoginStateChangedListener() {
                     @Override
-                    public void onLoginSucceeded() { }
+                    public void onLoginSucceeded() {
+
+                        //getting data after logging in
+                        SnapLogin.fetchUserData(getApplicationContext(), query, variables, new FetchUserDataCallback() {
+                            @Override
+                            public void onSuccess(@Nullable UserDataResponse userDataResponse) {
+
+
+
+                                if (userDataResponse == null || userDataResponse.getData() == null) {
+                                    return;
+                                }
+                                MeData meData = userDataResponse.getData().getMe();
+                                if (meData == null){
+                                    return;
+                                }
+
+                                username = meData.getDisplayName();
+
+                            }
+
+
+                            @Override
+                            public void onFailure(boolean b, int i) {
+                                Log.d("myusername", username);
+                            }
+                        });
+                    }
 
                     @Override
                     public void onLoginFailed() { }
@@ -61,10 +90,10 @@ public class MainActivity extends AppCompatActivity {
         // Add the LoginStateChangedListener you’ve defined to receive LoginInState updates
         SnapLogin.getLoginStateController(getApplicationContext()).addOnLoginStateChangedListener(mLoginStateChangedListener);
 
+    }
 
-
-
-
+    public String getUsername(){
+        return username;
     }
 
 

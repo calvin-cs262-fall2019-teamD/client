@@ -106,9 +106,9 @@ public class UserProfileScreen extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public void onBackPressed() {
-        gotLeaderBoardScreen();
-        finish();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        gotLeaderBoardScreen();
+//        finish();
+//    }
 }

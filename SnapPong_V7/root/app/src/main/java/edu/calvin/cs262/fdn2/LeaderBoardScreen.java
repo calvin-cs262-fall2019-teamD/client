@@ -36,9 +36,7 @@ public class LeaderBoardScreen extends AppCompatActivity {
     LeaderBoardAdapter adapter;
 
 
-    String query = "{me{bitmoji{avatar},displayName}}";
-    Map<String ,Object> variables = null;
-    String username = "empty";
+
 
     //we create a random set of elo values and winRates to be displayed
     private String[] randomElos = {"578697","475425","465693","455731","374657","364291","321697","245594","271456","213477"};
@@ -57,31 +55,8 @@ public class LeaderBoardScreen extends AppCompatActivity {
         String action = intent.getAction();
         Uri data = intent.getData();
 
-        Log.d("myusername", data.toString());
-
-        SnapLogin.fetchUserData(this, query, variables, new FetchUserDataCallback() {
-            @Override
-            public void onSuccess(@Nullable UserDataResponse userDataResponse) {
-
-                if (userDataResponse == null || userDataResponse.getData() == null) {
-                    return;
-                }
-                MeData meData = userDataResponse.getData().getMe();
-                if (meData == null){
-                    return;
-                }
-
-                username = meData.getDisplayName();
-
-            }
 
 
-
-            @Override
-            public void onFailure(boolean b, int i) {
-                Log.d("myusername", username);
-            }
-        });
 
 
 

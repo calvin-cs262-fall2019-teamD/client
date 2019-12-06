@@ -51,7 +51,8 @@
 
         <activity
             android:name=".UserProfileScreen"
-            android:label="User Profile">
+            android:label="User Profile"
+            >
         </activity>
 
         <activity
