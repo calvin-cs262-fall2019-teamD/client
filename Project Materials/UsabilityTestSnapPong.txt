@@ -1,0 +1,30 @@
+Usability Test: SnapPong
+Fall, 2019
+CS262-Team D
+
+
+Introduction
+
+Thank you for agreeing to participate in the usability test for our app, SnapPong. We would like to see first-hand what it would be like for people to use our app, which will help us figure out how to make it easier and more fun to use our app.
+
+We’re testing the app, not you. You can’t do anything wrong here. We want to hear exactly what you think about the site. Be honest and don’t worry about hurting our feelings. That will help us find problems that exist and will help us fix them. 
+
+For the test, we’ll ask you to do certain tasks and we’d like you to think out loud while you’re doing them. If you have questions, just ask. If you have comments, go ahead and say them. We’ll make a note of your comments, but won’t make them public. If, for any reason, you’d like to quit this test, then just say so and you will be able to at any time.
+
+
+
+Background Questions
+
+Before we try out the app, we have a few questions for you. Do you play ping pong at all and if so, what would you say your interest level is on a scale of 1-5? Do you enjoy playing competitively? Are you a Snapchat user and if so, how often do you use it? 
+
+
+The Test
+
+1. We have integrated SnapChat's API for ease of login. Can you login to the app through SnapChat?
+
+2. You can view your own user profile page. Try viewing your own.
+
+3. You can view other user's profiles. Try viewing Mr. Bond's page.
+
+4. The leaderboard is interactive. Try finding the 10th ranked player on the leaderboard. 
+

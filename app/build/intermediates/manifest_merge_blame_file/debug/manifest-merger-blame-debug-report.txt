@@ -1,0 +1,109 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="edu.calvin.cs262.snappong"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:5:5-67
+11-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:5:22-64
+12
+13    <application
+13-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:7:5-55:19
+14        android:allowBackup="true"
+14-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:8:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.1.0] /home/hcp3/.gradle/caches/transforms-2/files-2.1/7f6c41cc2a14c0fbaa8d0166c17dc544/core-1.1.0/AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:icon="@mipmap/ic_snapponglogo1"
+17-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:9:9-48
+18        android:label="@string/app_name"
+18-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:10:9-41
+19        android:roundIcon="@mipmap/ic_launcher_round"
+19-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:11:9-54
+20        android:supportsRtl="true"
+20-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:12:9-35
+21        android:testOnly="true"
+22        android:theme="@style/AppTheme" >
+22-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:13:9-40
+23        <activity android:name="edu.calvin.cs262.fdn2.GameRequestScreen" />
+23-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:14:9-64
+23-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:14:19-52
+24
+25        <meta-data
+25-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:16:9-18:68
+26            android:name="com.snapchat.kit.sdk.clientId"
+26-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:17:13-57
+27            android:value="1cb5158b-3e4f-45ae-94dd-2b11c74aeb6b" />
+27-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:18:13-65
+28        <meta-data
+28-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:19:9-21:55
+29            android:name="com.snapchat.kit.sdk.redirectUrl"
+29-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:20:13-60
+30            android:value="myapp://snap-kit/oauth2" />
+30-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:21:13-52
+31        <meta-data
+31-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:22:9-24:61
+32            android:name="com.snapchat.kit.sdk.scopes"
+32-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:23:13-55
+33            android:resource="@array/snap_connect_scopes" />
+33-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:24:13-58
+34
+35        <activity
+35-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:26:9-35:20
+36            android:name="edu.calvin.cs262.fdn2.MainActivity"
+36-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:27:13-41
+37            android:theme="@style/Theme.AppCompat.NoActionBar" >
+37-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:28:13-63
+38            <intent-filter>
+38-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:29:13-32:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:30:17-69
+39-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:30:25-66
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:31:17-77
+41-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:31:27-74
+42            </intent-filter>
+43        </activity>
+44        <activity android:name="edu.calvin.cs262.fdn2.LeaderBoardScreen" >
+44-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:36:9-49:20
+44-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:37:13-46
+45            <intent-filter>
+45-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:38:13-48:29
+46                <action android:name="android.intent.action.VIEW" />
+46-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:39:17-69
+46-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:39:25-66
+47
+48                <category android:name="android.intent.category.DEFAULT" />
+48-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:41:17-76
+48-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:41:27-73
+49                <category android:name="android.intent.category.BROWSABLE" />
+49-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:42:17-78
+49-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:42:27-75
+50
+51                <data
+51-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:44:17-47:46
+52                    android:host="snap-kit"
+52-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:45:21-44
+53                    android:path="/oauth2"
+53-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:46:21-43
+54                    android:scheme="myapp" />
+54-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:47:21-43
+55            </intent-filter>
+56        </activity>
+57        <activity
+57-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:51:9-53:72
+58            android:name="edu.calvin.cs262.fdn2.UserProfileScreen"
+58-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:52:13-46
+59            android:parentActivityName="edu.calvin.cs262.fdn2.LeaderBoardScreen" />
+59-->/home/hcp3/Desktop/client-benjuniour-test/SnapPong_V6/root/app/src/main/AndroidManifest.xml:53:13-60
+60    </application>
+61
+62</manifest>
