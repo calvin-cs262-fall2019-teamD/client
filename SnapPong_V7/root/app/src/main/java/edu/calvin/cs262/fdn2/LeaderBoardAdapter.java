@@ -11,6 +11,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
 import java.util.Random;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,8 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
     private String[] winRateData;
     private int[] mbitmojiImgs;
     private Context mContext;
+
+
 
     public LeaderBoardAdapter(Context context, String[] playerEloData, String[] playerWinRateData, int[] bitmojiimgs) {
         this.eloData = playerEloData;

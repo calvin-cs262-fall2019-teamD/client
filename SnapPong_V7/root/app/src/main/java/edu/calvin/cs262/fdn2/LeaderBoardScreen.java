@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,10 +25,12 @@ import android.widget.Toast;
 import com.snapchat.kit.sdk.Bitmoji;
 import com.snapchat.kit.sdk.SnapLogin;
 import com.snapchat.kit.sdk.bitmoji.networking.FetchAvatarUrlCallback;
+import com.snapchat.kit.sdk.core.controller.LoginStateController;
 import com.snapchat.kit.sdk.login.models.MeData;
 import com.snapchat.kit.sdk.login.models.UserDataResponse;
 import com.snapchat.kit.sdk.login.networking.FetchUserDataCallback;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -34,7 +38,10 @@ public class LeaderBoardScreen extends AppCompatActivity {
 
     RecyclerView recyclerView;
     LeaderBoardAdapter adapter;
-
+    String query = "{me{bitmoji{avatar},displayName}}";
+    Map<String ,Object> variables = null;
+    public String username = "empty";
+    private PlayerViewModel mplayerViewModel;
 
 
 
@@ -55,33 +62,112 @@ public class LeaderBoardScreen extends AppCompatActivity {
         String action = intent.getAction();
         Uri data = intent.getData();
 
+        //checks to see if we are logged in
+//        boolean isUserLoggedIn = SnapLogin.isUserLoggedIn(getApplicationContext());
+//        Toast.makeText(this, Boolean.toString(isUserLoggedIn),Toast.LENGTH_SHORT).show();
 
+        //we get a View model from the ViewModelProviders class provided by android
 
-
-
-
-//        Toast.makeText(getBaseContext(),"Welcome to SnapPong!", Toast.LENGTH_SHORT).show();
 
         recyclerView = findViewById(R.id.recyclerview2);
 
-        //we pass into our adapter random elos and win rates to be displayed every time
-        adapter = new LeaderBoardAdapter(this, randomElos,randomWinrate, bitmojiImgs);
-
-        //we set the layoutmanager for our recyclerview
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
-
-        //we let our recyclerview use the adapter we created.
+        //this is for testing the player adapter
+        final PlayerAdapter adapter = new PlayerAdapter(this);
         recyclerView.setAdapter(adapter);
+
+        //setting the layout structure to be linear
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        mplayerViewModel = ViewModelProviders.of(this).get(PlayerViewModel.class);
+
+        //we add an observer for the LiveData returned by getAllPlayers()
+        mplayerViewModel.getPlayers().observe(this, new Observer<List<Player>>() {
+            @Override
+            public void onChanged(List<Player> players) {
+                //update the cached copy of the words in the adapter
+                adapter.setPlayers(players);
+            }
+        });
+//        //we pass into our adapter random elos and win rates to be displayed every time
+//        adapter = new LeaderBoardAdapter(this, randomElos,randomWinrate, bitmojiImgs);
+//
+//        //we set the layoutmanager for our recyclerview
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+//        recyclerView.setLayoutManager(layoutManager);
+//
+//        //we let our recyclerview use the adapter we created.
+//        recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * Checks what the status of our login is
+     * If it is a success, you get the data.
+     */
+    public void checkLoginStatus(){
+        final LoginStateController.OnLoginStateChangedListener mLoginStateChangedListener =
+                new LoginStateController.OnLoginStateChangedListener() {
+                    @Override
+                    public void onLoginSucceeded() { getSnapChatData(); }
 
+                    @Override
+                    public void onLoginFailed() { }
+
+                    @Override
+                    public void onLogout() { }
+                };
+
+        // Add the LoginStateChangedListener you’ve defined to receive LoginInState updates
+        SnapLogin.getLoginStateController(getApplicationContext()).addOnLoginStateChangedListener(mLoginStateChangedListener);
+    }
+
+    /**
+     * Gets both the bitmoji and display name from Snapchat
+     */
+    public void getSnapChatData(){
+        //getting data after logging in
+        SnapLogin.fetchUserData(getApplicationContext(), query, null, new FetchUserDataCallback() {
+
+            /**
+             * Goes here if getting the data is a success
+             * @param userDataResponse- the user's response
+             */
+            @Override
+            public void onSuccess(@Nullable UserDataResponse userDataResponse) {
+
+
+                if (userDataResponse == null || userDataResponse.getData() == null) {
+                    return;
+                }
+                MeData meData = userDataResponse.getData().getMe();
+
+
+                if (meData == null){
+                    return;
+                }
+
+            }
+
+            /**
+             * Goes here if getting the data is a success
+             * @param b,i
+             */
+            @Override
+            public void onFailure(boolean b, int i) { }
+        });
+
+    }
+
+    /**
+     * Sends the user to the profile screen
+     */
     public void gotoUserProfileScreen(){
         Intent userProfileIntent = new Intent(getApplicationContext(), UserProfileScreen.class);
         startActivity(userProfileIntent);
     }
 
-
+    /**
+     * Sends the user to the game request screen.
+     */
     public void gotoGameRequestScreen(){
         Intent userProfileIntent = new Intent(getApplicationContext(), GameRequestScreen.class);
         startActivity(userProfileIntent);

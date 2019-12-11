@@ -39,56 +39,23 @@ public class MainActivity extends AppCompatActivity {
         login = findViewById(R.id.login_button);
 
 
+//
+//        login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                SnapLogin.getAuthTokenManager(getApplicationContext()).startTokenGrant();
+//            }
+//        });
 
-////        TODO://this function sends us to snapchat to get the data: Uncomment if you want to want to log in via snapchat
+
+        //TODO: to be removed
         login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                SnapLogin.getAuthTokenManager(getApplicationContext()).startTokenGrant();
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), LeaderBoardScreen.class);
+                startActivity(intent);
             }
         });
-
-        final LoginStateController.OnLoginStateChangedListener mLoginStateChangedListener =
-                new LoginStateController.OnLoginStateChangedListener() {
-                    @Override
-                    public void onLoginSucceeded() {
-
-                        //getting data after logging in
-                        SnapLogin.fetchUserData(getApplicationContext(), query, variables, new FetchUserDataCallback() {
-                            @Override
-                            public void onSuccess(@Nullable UserDataResponse userDataResponse) {
-
-
-
-                                if (userDataResponse == null || userDataResponse.getData() == null) {
-                                    return;
-                                }
-                                MeData meData = userDataResponse.getData().getMe();
-                                if (meData == null){
-                                    return;
-                                }
-
-                                username = meData.getDisplayName();
-
-                            }
-
-
-                            @Override
-                            public void onFailure(boolean b, int i) {
-                                Log.d("myusername", username);
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onLoginFailed() { }
-
-                    @Override
-                    public void onLogout() { }
-                };
-
-        // Add the LoginStateChangedListener you’ve defined to receive LoginInState updates
-        SnapLogin.getLoginStateController(getApplicationContext()).addOnLoginStateChangedListener(mLoginStateChangedListener);
 
     }
 
