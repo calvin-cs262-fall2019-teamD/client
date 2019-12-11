@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#2b2b2b</color>
     <color name="colorAccent">#D81B60</color>
     <color name="btnColor">#EAE345</color>
+    <color name="colorTextPrimary">@android:color/white</color>
+    <color name="colorScreenBackground">#fff3e0</color>
+    <color name="colorTextHint">#E0E0E0</color>
 </resources>

@@ -3,6 +3,7 @@ package edu.calvin.cs262.fdn2;
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public interface PlayerDao {
      * inserts data into our table
      * @param player, a player in our app
      */
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Player player);
 
     /**

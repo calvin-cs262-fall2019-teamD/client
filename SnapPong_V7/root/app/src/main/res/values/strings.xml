@@ -14,4 +14,7 @@
     <string name="pinpong_png_login">pingpong png displayed on login screen</string>
     <string name="login_bitmoji">bitmoji png displayed on the login screen</string>
     <string name="login">Login</string>
+    <string name="hint_word">Score...</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
 </resources>

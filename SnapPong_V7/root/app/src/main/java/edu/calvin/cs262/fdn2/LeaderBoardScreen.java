@@ -38,12 +38,9 @@ public class LeaderBoardScreen extends AppCompatActivity {
 
     RecyclerView recyclerView;
     LeaderBoardAdapter adapter;
-    String query = "{me{bitmoji{avatar},displayName}}";
-    Map<String ,Object> variables = null;
-    public String username = "empty";
-    private PlayerViewModel mplayerViewModel;
+    PlayerViewModel mplayerViewModel;
 
-
+    public static final int NEW_SCORE_ACTIVITY_REQUEST_CODE = 1;
 
     //we create a random set of elo values and winRates to be displayed
     private String[] randomElos = {"578697","475425","465693","455731","374657","364291","321697","245594","271456","213477"};
@@ -66,8 +63,6 @@ public class LeaderBoardScreen extends AppCompatActivity {
 //        boolean isUserLoggedIn = SnapLogin.isUserLoggedIn(getApplicationContext());
 //        Toast.makeText(this, Boolean.toString(isUserLoggedIn),Toast.LENGTH_SHORT).show();
 
-        //we get a View model from the ViewModelProviders class provided by android
-
 
         recyclerView = findViewById(R.id.recyclerview2);
 
@@ -78,6 +73,7 @@ public class LeaderBoardScreen extends AppCompatActivity {
         //setting the layout structure to be linear
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        //we get a View model from the ViewModelProviders class provided by android
         mplayerViewModel = ViewModelProviders.of(this).get(PlayerViewModel.class);
 
         //we add an observer for the LiveData returned by getAllPlayers()
@@ -100,6 +96,22 @@ public class LeaderBoardScreen extends AppCompatActivity {
     }
 
     /**
+     * Activity callback
+     * If the activity returns with RESULT_OK, insert the returned word into the database by
+     * calling the insert method of the PlayerViewModel
+     */
+    public void onActivityResult (int requestcode, int resultcode, Intent data){
+        super.onActivityResult(requestcode, requestcode,data);
+
+        if (requestcode == NEW_SCORE_ACTIVITY_REQUEST_CODE && resultcode == RESULT_OK){
+            Player player = new Player (data.getStringExtra(GamePlayScreen.EXTRA_REPLY));
+            mplayerViewModel.insert(player);
+        }else{
+            Toast.makeText(getApplicationContext(),R.string.empty_not_saved,Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
      * Checks what the status of our login is
      * If it is a success, you get the data.
      */
@@ -107,7 +119,10 @@ public class LeaderBoardScreen extends AppCompatActivity {
         final LoginStateController.OnLoginStateChangedListener mLoginStateChangedListener =
                 new LoginStateController.OnLoginStateChangedListener() {
                     @Override
-                    public void onLoginSucceeded() { getSnapChatData(); }
+                    public void onLoginSucceeded() {
+                        Toast.makeText(getApplicationContext(), "Login Successful",Toast.LENGTH_SHORT).show();
+//                        getSnapChatData();
+                    }
 
                     @Override
                     public void onLoginFailed() { }
@@ -120,42 +135,6 @@ public class LeaderBoardScreen extends AppCompatActivity {
         SnapLogin.getLoginStateController(getApplicationContext()).addOnLoginStateChangedListener(mLoginStateChangedListener);
     }
 
-    /**
-     * Gets both the bitmoji and display name from Snapchat
-     */
-    public void getSnapChatData(){
-        //getting data after logging in
-        SnapLogin.fetchUserData(getApplicationContext(), query, null, new FetchUserDataCallback() {
-
-            /**
-             * Goes here if getting the data is a success
-             * @param userDataResponse- the user's response
-             */
-            @Override
-            public void onSuccess(@Nullable UserDataResponse userDataResponse) {
-
-
-                if (userDataResponse == null || userDataResponse.getData() == null) {
-                    return;
-                }
-                MeData meData = userDataResponse.getData().getMe();
-
-
-                if (meData == null){
-                    return;
-                }
-
-            }
-
-            /**
-             * Goes here if getting the data is a success
-             * @param b,i
-             */
-            @Override
-            public void onFailure(boolean b, int i) { }
-        });
-
-    }
 
     /**
      * Sends the user to the profile screen
@@ -169,8 +148,10 @@ public class LeaderBoardScreen extends AppCompatActivity {
      * Sends the user to the game request screen.
      */
     public void gotoGameRequestScreen(){
-        Intent userProfileIntent = new Intent(getApplicationContext(), GameRequestScreen.class);
-        startActivity(userProfileIntent);
+        Intent intent = new Intent(this, GamePlayScreen.class);
+        startActivityForResult(intent, NEW_SCORE_ACTIVITY_REQUEST_CODE);
+//        Intent userProfileIntent = new Intent(getApplicationContext(), GameRequestScreen.class);
+//        startActivity(userProfileIntent);
     }
 //
 //            public void onClick(View v) {

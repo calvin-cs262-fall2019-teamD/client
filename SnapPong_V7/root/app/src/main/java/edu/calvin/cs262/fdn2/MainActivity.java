@@ -39,14 +39,14 @@ public class MainActivity extends AppCompatActivity {
         login = findViewById(R.id.login_button);
 
 
-//
+//        //send the user to the snapchat authentication screen
 //        login.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
 //                SnapLogin.getAuthTokenManager(getApplicationContext()).startTokenGrant();
+//                getSnapChatData();
 //            }
 //        });
-
 
         //TODO: to be removed
         login.setOnClickListener(new View.OnClickListener() {
@@ -59,11 +59,52 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Gets both the bitmoji and display name from Snapchat
+     */
+    public String getSnapChatData(){
+        //getting data after logging in
+        SnapLogin.fetchUserData(getApplicationContext(), query, null, new FetchUserDataCallback() {
+
+            /**
+             * Goes here if getting the data is a success
+             * @param userDataResponse- the user's response
+             */
+            @Override
+            public void onSuccess(@Nullable UserDataResponse userDataResponse) {
+                Toast.makeText(getApplicationContext(), "Got Data",Toast.LENGTH_SHORT).show();
+                if (userDataResponse == null || userDataResponse.getData() == null) {
+                    return;
+                }
+
+                MeData meData = userDataResponse.getData().getMe();
+
+
+                if (meData == null){
+                    return;
+                }
+                else{
+                   username = meData.getDisplayName();
+                }
+
+            }
+
+            /**
+             * Goes here if getting the data is a success
+             * @param b,i
+             */
+            @Override
+            public void onFailure(boolean b, int i) {
+                Toast.makeText(getApplicationContext(), "failed to get data",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return username;
+
+    }
+
     public String getUsername(){
         return username;
     }
-
-
-//
 
 }

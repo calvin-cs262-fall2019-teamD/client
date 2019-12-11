@@ -11,11 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".GamePlayScreen"></activity>
 
         <meta-data
             android:name="com.snapchat.kit.sdk.clientId"
-            android:value="1cb5158b-3e4f-45ae-94dd-2b11c74aeb6b" />
+            android:value="ca699668-8c6c-4ee8-a2ad-a932c2c3c597" />
         <meta-data
             android:name="com.snapchat.kit.sdk.redirectUrl"
             android:value="myapp://snap-kit/oauth2" />
@@ -28,10 +28,9 @@
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
         <activity
             android:name=".LeaderBoardScreen"
@@ -49,18 +48,12 @@
                     android:scheme="myapp" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".UserProfileScreen"
-            android:label="User Profile"
-            >
-        </activity>
-
+            android:label="User Profile"></activity>
         <activity
             android:name=".GameRequestScreen"
-            android:label="Game Request">
-        </activity>
-
+            android:label="Game Request"></activity>
     </application>
 
 </manifest>

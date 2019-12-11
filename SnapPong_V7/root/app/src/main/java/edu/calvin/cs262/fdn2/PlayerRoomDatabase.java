@@ -49,7 +49,7 @@ public abstract class PlayerRoomDatabase extends RoomDatabase {
      */
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
         private final PlayerDao mDao;
-        String[] playernames = {"Bernard", "Freddie", "Daniel"};
+        String[] playernames = {"Bernard"};
 
         PopulateDbAsync(PlayerRoomDatabase db) {
             mDao = db.playerDao();
