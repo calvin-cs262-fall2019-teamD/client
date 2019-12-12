@@ -9,7 +9,7 @@ import androidx.room.Query;
 import java.util.List;
 
 /**
- * This class speciy SQL queriesand associate them with method calls
+ * This class specifies SQL queries and associate them with method calls
  */
 @Dao
 public interface PlayerDao {
@@ -17,6 +17,7 @@ public interface PlayerDao {
 
     /**
      * inserts data into our table
+     *
      * @param player, a player in our app
      */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
@@ -30,9 +31,9 @@ public interface PlayerDao {
 
 
     /**
-     * This method is specifically for data observaion and helps the
+     * This method is specifically for data observation and helps the
      * app respond to data changes
      */
     @Query("SELECT * from player_table")
-   LiveData<List<Player>> getAllPlayers();
+    LiveData<List<Player>> getAllPlayers();
 }

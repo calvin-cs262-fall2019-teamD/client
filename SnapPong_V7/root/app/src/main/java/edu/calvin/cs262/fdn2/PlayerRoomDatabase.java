@@ -12,9 +12,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 @Database(entities = Player.class, version = 1, exportSchema = false)
 public abstract class PlayerRoomDatabase extends RoomDatabase {
 
-    public abstract PlayerDao playerDao();
     private static PlayerRoomDatabase INSTANCE;
-
     private static RoomDatabase.Callback sRoomDatabaseCallback =
             new RoomDatabase.Callback() {
                 @Override
@@ -24,15 +22,21 @@ public abstract class PlayerRoomDatabase extends RoomDatabase {
                 }
             };
 
-    public static PlayerRoomDatabase getDatbase(final Context context){
-        if (INSTANCE == null){
-            synchronized (PlayerRoomDatabase.class){
+    /**
+     * Start an instance of the database.
+     *
+     * @param context
+     * @return
+     */
+    public static PlayerRoomDatabase getDatbase(final Context context) {
+        if (INSTANCE == null) {
+            synchronized (PlayerRoomDatabase.class) {
 
-                if (INSTANCE == null){
+                if (INSTANCE == null) {
                     //we create database here
                     INSTANCE = Room.databaseBuilder(context,
-                    PlayerRoomDatabase.class, "player_database")
-                            //wipes and rebuilds instead o fmigrating
+                            PlayerRoomDatabase.class, "player_database")
+                            //wipes and rebuilds instead of migrating
                             //if no Migration object
                             //Migration is not part of this practical
                             .fallbackToDestructiveMigration()
@@ -43,6 +47,8 @@ public abstract class PlayerRoomDatabase extends RoomDatabase {
         }
         return INSTANCE;
     }
+
+    public abstract PlayerDao playerDao();
 
     /**
      * Populates the database in the Background
@@ -62,8 +68,8 @@ public abstract class PlayerRoomDatabase extends RoomDatabase {
             // Not needed if you only populate the database
             // when it is first created
             mDao.deleteAll();
-            if (playernames.length !=0){
-                for (int i =0; i <= playernames.length -1 ; i++){
+            if (playernames.length != 0) {
+                for (int i = 0; i <= playernames.length - 1; i++) {
 
                     //we create a player with that particular name for each time
                     Player player = new Player(playernames[i]);

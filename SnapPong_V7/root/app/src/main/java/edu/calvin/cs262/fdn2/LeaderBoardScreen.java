@@ -1,52 +1,47 @@
 package edu.calvin.cs262.fdn2;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
-import androidx.appcompat.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.snapchat.kit.sdk.Bitmoji;
 import com.snapchat.kit.sdk.SnapLogin;
-import com.snapchat.kit.sdk.bitmoji.networking.FetchAvatarUrlCallback;
 import com.snapchat.kit.sdk.core.controller.LoginStateController;
-import com.snapchat.kit.sdk.login.models.MeData;
-import com.snapchat.kit.sdk.login.models.UserDataResponse;
-import com.snapchat.kit.sdk.login.networking.FetchUserDataCallback;
 
 import java.util.List;
-import java.util.Map;
+
+/**
+ * The leaderboard screen displays all the users in the system and ranks them by their ELO rating.
+ */
 
 
 public class LeaderBoardScreen extends AppCompatActivity {
 
+    public static final int NEW_SCORE_ACTIVITY_REQUEST_CODE = 1;
     RecyclerView recyclerView;
     LeaderBoardAdapter adapter;
     PlayerViewModel mplayerViewModel;
-
-    public static final int NEW_SCORE_ACTIVITY_REQUEST_CODE = 1;
-
     //we create a random set of elo values and winRates to be displayed
-    private String[] randomElos = {"578697","475425","465693","455731","374657","364291","321697","245594","271456","213477"};
-    private String[] randomWinrate = {"80%","50%","96%","88%","36%","17%","36%","19%","38%","40%"};
-    private int[] bitmojiImgs = {R.drawable.bitmoji1,R.drawable.bitmoji2};
+    private String[] randomElos = {"578697", "475425", "465693", "455731", "374657", "364291", "321697", "245594", "271456", "213477"};
+    private String[] randomWinrate = {"80%", "50%", "96%", "88%", "36%", "17%", "36%", "19%", "38%", "40%"};
+    private int[] bitmojiImgs = {R.drawable.bitmoji1, R.drawable.bitmoji2};
 
+    /**
+     * Creates an instance of the leaderboard screen
+     *
+     * @param savedInstanceState
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,14 +95,14 @@ public class LeaderBoardScreen extends AppCompatActivity {
      * If the activity returns with RESULT_OK, insert the returned word into the database by
      * calling the insert method of the PlayerViewModel
      */
-    public void onActivityResult (int requestcode, int resultcode, Intent data){
-        super.onActivityResult(requestcode, requestcode,data);
+    public void onActivityResult(int requestcode, int resultcode, Intent data) {
+        super.onActivityResult(requestcode, requestcode, data);
 
-        if (requestcode == NEW_SCORE_ACTIVITY_REQUEST_CODE && resultcode == RESULT_OK){
-            Player player = new Player (data.getStringExtra(GamePlayScreen.EXTRA_REPLY));
+        if (requestcode == NEW_SCORE_ACTIVITY_REQUEST_CODE && resultcode == RESULT_OK) {
+            Player player = new Player(data.getStringExtra(GamePlayScreen.EXTRA_REPLY));
             mplayerViewModel.insert(player);
-        }else{
-            Toast.makeText(getApplicationContext(),R.string.empty_not_saved,Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), R.string.empty_not_saved, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -115,20 +110,22 @@ public class LeaderBoardScreen extends AppCompatActivity {
      * Checks what the status of our login is
      * If it is a success, you get the data.
      */
-    public void checkLoginStatus(){
+    public void checkLoginStatus() {
         final LoginStateController.OnLoginStateChangedListener mLoginStateChangedListener =
                 new LoginStateController.OnLoginStateChangedListener() {
                     @Override
                     public void onLoginSucceeded() {
-                        Toast.makeText(getApplicationContext(), "Login Successful",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
 //                        getSnapChatData();
                     }
 
                     @Override
-                    public void onLoginFailed() { }
+                    public void onLoginFailed() {
+                    }
 
                     @Override
-                    public void onLogout() { }
+                    public void onLogout() {
+                    }
                 };
 
         // Add the LoginStateChangedListener you’ve defined to receive LoginInState updates
@@ -139,7 +136,7 @@ public class LeaderBoardScreen extends AppCompatActivity {
     /**
      * Sends the user to the profile screen
      */
-    public void gotoUserProfileScreen(){
+    public void gotoUserProfileScreen() {
         Intent userProfileIntent = new Intent(getApplicationContext(), UserProfileScreen.class);
         startActivity(userProfileIntent);
     }
@@ -147,7 +144,7 @@ public class LeaderBoardScreen extends AppCompatActivity {
     /**
      * Sends the user to the game request screen.
      */
-    public void gotoGameRequestScreen(){
+    public void gotoGameRequestScreen() {
         Intent intent = new Intent(this, GamePlayScreen.class);
         startActivityForResult(intent, NEW_SCORE_ACTIVITY_REQUEST_CODE);
 //        Intent userProfileIntent = new Intent(getApplicationContext(), GameRequestScreen.class);
@@ -161,7 +158,8 @@ public class LeaderBoardScreen extends AppCompatActivity {
 //        });
 
     /**
-     *This function takes the user to the profile page of the top Ranked player.
+     * This function takes the user to the profile page of the top Ranked player.
+     *
      * @param view: the view being displayed - in this case the different bitmojis
      */
     public void profileClicked(View view) {
@@ -190,6 +188,7 @@ public class LeaderBoardScreen extends AppCompatActivity {
 
     /**
      * Creates the menu icons at the top of the screen
+     *
      * @param menu: the menu you're inflating
      * @return true
      */
@@ -205,15 +204,17 @@ public class LeaderBoardScreen extends AppCompatActivity {
         return true;
     }
 
-    /**Sends the user to the help page
+    /**
+     * Sends the user to the help page
      */
-    public void gotoHelp(){
+    public void gotoHelp() {
         Intent helpIntent = new Intent(this, HelpScreen.class);
         startActivity(helpIntent);
     }
 
     /**
      * Decides what to do when you select a particular icon
+     *
      * @param item: the item you're clicking on
      * @return true
      */
@@ -221,11 +222,10 @@ public class LeaderBoardScreen extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             //if the icon is the leaderboard, we hint that we are already on the leaderboard page
             case R.id.nav_leaderboard:
-                Toast.makeText(this,"Already viewing Leaderboard", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Already viewing Leaderboard", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.nav_game_request:

@@ -2,7 +2,6 @@ package edu.calvin.cs262.fdn2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -10,10 +9,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+/**
+ * User profile class that displays users' image, winrate, ELO, and game histories.
+ */
 
 public class UserProfileScreen extends AppCompatActivity {
 
@@ -48,13 +50,13 @@ public class UserProfileScreen extends AppCompatActivity {
         recyclerview.setLayoutManager(layoutManager);
     }
 
-    public void gotoGameRequestScreen(){
+    public void gotoGameRequestScreen() {
         Intent userProfileIntent = new Intent(getApplicationContext(), GameRequestScreen.class);
         startActivity(userProfileIntent);
     }
 
 
-    public void gotLeaderBoardScreen(){
+    public void gotLeaderBoardScreen() {
         Intent userProfileIntent = new Intent(getApplicationContext(), LeaderBoardScreen.class);
         startActivity(userProfileIntent);
     }
@@ -62,6 +64,7 @@ public class UserProfileScreen extends AppCompatActivity {
 
     /**
      * Creates the menu icons at the top of the screen
+     *
      * @param menu: the menu you're inflating
      * @return true
      */
@@ -80,22 +83,24 @@ public class UserProfileScreen extends AppCompatActivity {
         // return true so that the menu pop up is opened
         return true;
     }
-    /**Sends the user to the help page
+
+    /**
+     * Sends the user to the help page
      */
-    public void gotoHelp(){
+    public void gotoHelp() {
         Intent helpIntent = new Intent(this, HelpScreen.class);
         startActivity(helpIntent);
     }
 
     /**
      * Decides what to do when you select a particular icon
+     *
      * @param item: the item you're clicking on
      * @return true
      */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
 
             case R.id.nav_leaderboard:
                 gotLeaderBoardScreen();
@@ -103,12 +108,12 @@ public class UserProfileScreen extends AppCompatActivity {
 
 
             case R.id.nav_game_request:
-               gotoGameRequestScreen();
+                gotoGameRequestScreen();
                 break;
 
             //if the icon is the profile screen, we hint that we are already on that page
             case R.id.nav_profile:
-                Toast.makeText(this,"Already viewing your profile", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Already viewing your profile", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.help:

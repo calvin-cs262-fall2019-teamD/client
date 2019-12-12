@@ -11,15 +11,14 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
-import java.util.Random;
-
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Random;
+
 /**
- * Link to popupwindow = https://stackoverflow.com/questions/18461990/pop-up-window-to-display-some-stuff-in-a-fragment
+ * Adapter for the LeaderBoardScreen class
  */
 public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.LeaderBoardViewHolder> {
 
@@ -28,7 +27,6 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
     private String[] winRateData;
     private int[] mbitmojiImgs;
     private Context mContext;
-
 
 
     public LeaderBoardAdapter(Context context, String[] playerEloData, String[] playerWinRateData, int[] bitmojiimgs) {
@@ -51,7 +49,7 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
     }
 
     /**
-     * This is where the data of the Player is bounded to the UI elements
+     * This is where the data of the Player is bound to the UI elements
      *
      * @param holder
      * @param position
@@ -77,7 +75,7 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
         holder.winrate.setText(winRateData[position]);
 
         //increase the change rate by 1
-        String increasedChangeRate = position+1 + "+";
+        String increasedChangeRate = position + 1 + "+";
 
         //changing the change rate to increase by 1
         holder.changingrate.setText(increasedChangeRate);
@@ -88,7 +86,7 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
             public void onClick(View view) {
 
                 //displays a toast about which player rank you have clicked
-                Toast.makeText(mContext, "Clicked on player rank " + String.valueOf(position + 4), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Clicked on player rank " + (position + 4), Toast.LENGTH_SHORT).show();
             }
         });
         holder.profilecardview.setOnLongClickListener(new View.OnLongClickListener() {
@@ -105,6 +103,13 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
         return eloData.length;
     }
 
+
+    /**
+     * Popup window for other players' profiles
+     *
+     * @param anchorview Link to popupwindow = https://stackoverflow.com/questions/18461990/pop-up-window-to-display-some-stuff-in-a-fragment
+     */
+
     private void showPopup(View anchorview) {
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
         View popupView = layoutInflater.inflate(R.layout.profilepopup, null);
@@ -118,7 +123,7 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
         // If you need the PopupWindow to dismiss when when touched outside
         popupWindow.setBackgroundDrawable(new ColorDrawable());
 
-        int location[] = new int[2];
+        int[] location = new int[2];
 
         // Get the View's(the one that was clicked in the Fragment) location
         anchorview.getLocationOnScreen(location);

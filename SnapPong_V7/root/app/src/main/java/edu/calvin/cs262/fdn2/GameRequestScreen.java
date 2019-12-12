@@ -1,12 +1,7 @@
 package edu.calvin.cs262.fdn2;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,8 +10,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.snapchat.kit.sdk.Bitmoji;
-import com.snapchat.kit.sdk.bitmoji.networking.FetchAvatarUrlCallback;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+/**
+ * Game requests screen pulls up user's friend list from Snapchat (currently not working)
+ */
 
 public class GameRequestScreen extends AppCompatActivity {
 
@@ -33,11 +32,11 @@ public class GameRequestScreen extends AppCompatActivity {
         secondplayer = findViewById(R.id.secondplayerfromgamerequest);
 
 
-
     }
 
     /**
      * Sends a game Request Via SnapChat
+     *
      * @param view: Button you clicked on (GameRequestButton)
      */
 
@@ -47,20 +46,26 @@ public class GameRequestScreen extends AppCompatActivity {
 
     }
 
-
-    public void gotoUserProfileScreen(){
+    /**
+     * Goes to the logged in user's profile page
+     */
+    public void gotoUserProfileScreen() {
         Intent userProfileIntent = new Intent(getApplicationContext(), UserProfileScreen.class);
         startActivity(userProfileIntent);
     }
 
+    /**
+     * Goes to the leaderboard page
+     */
 
-    public void gotLeaderBoardScreen(){
+    public void gotLeaderBoardScreen() {
         Intent userProfileIntent = new Intent(getApplicationContext(), LeaderBoardScreen.class);
         startActivity(userProfileIntent);
     }
 
     /**
      * Creates the menu icons at the top of the screen
+     *
      * @param menu: the menu you're inflating
      * @return true
      */
@@ -72,22 +77,23 @@ public class GameRequestScreen extends AppCompatActivity {
         return true;
     }
 
-    /**Sends the user to the help page
+    /**
+     * Sends the user to the help page
      */
-    public void gotoHelp(){
+    public void gotoHelp() {
         Intent helpIntent = new Intent(this, HelpScreen.class);
         startActivity(helpIntent);
     }
 
     /**
      * Decides what to do when you select a particular icon
+     *
      * @param item: the item you're clicking on
      * @return true
      */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
 
             case R.id.nav_leaderboard:
                 gotLeaderBoardScreen();
@@ -95,7 +101,7 @@ public class GameRequestScreen extends AppCompatActivity {
 
             //if the icon is the game request screen, we hint that we are already on that page
             case R.id.nav_game_request:
-                Toast.makeText(this,"Already viewing Game Request", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Already viewing Game Request", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.nav_profile:
@@ -115,8 +121,6 @@ public class GameRequestScreen extends AppCompatActivity {
         gotLeaderBoardScreen();
         finish();
     }
-
-
 
 
 }

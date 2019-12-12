@@ -1,7 +1,5 @@
 package edu.calvin.cs262.fdn2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,7 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import edu.calvin.cs262.fdn2.R;
+import androidx.appcompat.app.AppCompatActivity;
+
+/**
+ * Entering scores after ping pong game
+ */
 
 public class GamePlayScreen extends AppCompatActivity {
 
@@ -29,13 +31,13 @@ public class GamePlayScreen extends AppCompatActivity {
             public void onClick(View v) {
                 Intent replyIntent = new Intent();
 
-                //if no score has been entered, we set our result to be sent to be FLAGGED Canceled
-                if(TextUtils.isEmpty(mScoreview.getText())){
+                //if no score has been entered, we set our result to be sent to be FLAGGED Cancelled
+                if (TextUtils.isEmpty(mScoreview.getText())) {
                     setResult(RESULT_CANCELED, replyIntent);
                 }
 
                 //We get the data from our entry box and pass that through our intent
-                else{
+                else {
                     String score = mScoreview.getText().toString();
 
                     //before we insert the data into the database, we change the score to get the ELO
@@ -43,8 +45,8 @@ public class GamePlayScreen extends AppCompatActivity {
 
                     //then we revert back the string and pass it into the database
                     score = String.valueOf(computedscore);
-                    replyIntent.putExtra(EXTRA_REPLY,score);
-                    setResult(RESULT_OK,replyIntent);
+                    replyIntent.putExtra(EXTRA_REPLY, score);
+                    setResult(RESULT_OK, replyIntent);
                 }
                 finish();
             }

@@ -18,18 +18,20 @@ public class Player {
 
     /**
      * Constructor
+     *
      * @param name, a player's name
      */
 
-    public Player(@NonNull String name){
+    public Player(@NonNull String name) {
         this.mName = name;
     }
 
     /**
      * Gets the player's name
+     *
      * @return mName
      */
-    public String getName(){
+    public String getName() {
         return this.mName;
     }
 }

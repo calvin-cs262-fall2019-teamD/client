@@ -1,8 +1,12 @@
 package edu.calvin.cs262.fdn2;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+/**
+ * Help screen for SnapPong manual
+ */
 
 public class HelpScreen extends AppCompatActivity {
 

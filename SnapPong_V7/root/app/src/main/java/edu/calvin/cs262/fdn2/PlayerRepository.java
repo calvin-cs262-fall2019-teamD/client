@@ -12,7 +12,7 @@ public class PlayerRepository {
     private PlayerDao mPlayerDao;
     private LiveData<List<Player>> mAllPlayers;
 
-    PlayerRepository(Application application){
+    PlayerRepository(Application application) {
         PlayerRoomDatabase db = PlayerRoomDatabase.getDatbase(application);
         mPlayerDao = db.playerDao();
         mAllPlayers = mPlayerDao.getAllPlayers();
@@ -22,11 +22,11 @@ public class PlayerRepository {
     /**
      * This method returns all the cached players as LiveData
      */
-    LiveData<List<Player>> getAllPlayers(){
+    LiveData<List<Player>> getAllPlayers() {
         return mAllPlayers;
     }
 
-    public void insert (Player player) {
+    public void insert(Player player) {
         new insertAsyncTask(mPlayerDao).execute(player);
     }
 

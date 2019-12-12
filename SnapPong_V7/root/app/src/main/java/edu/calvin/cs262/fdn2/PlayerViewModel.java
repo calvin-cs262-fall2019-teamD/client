@@ -14,25 +14,32 @@ public class PlayerViewModel extends AndroidViewModel {
 
     /**
      * Constructor
+     *
      * @param application, application context
      */
-    public PlayerViewModel (Application application){
-        super (application);
+    public PlayerViewModel(Application application) {
+        super(application);
         mRepository = new PlayerRepository(application);
         mAllPlayers = mRepository.getAllPlayers();
     }
 
     /**
      * This functions hides the implementation from the UI
+     *
      * @return
      */
-    LiveData<List<Player>> getPlayers() { return mAllPlayers; }
+    LiveData<List<Player>> getPlayers() {
+        return mAllPlayers;
+    }
 
 
     /**
      * This functions calls the Repository's insert() method.
      * This implementation thus hides it completely from the UI
+     *
      * @param player
      */
-    public void insert(Player player) { mRepository.insert(player); }
+    public void insert(Player player) {
+        mRepository.insert(player);
+    }
 }

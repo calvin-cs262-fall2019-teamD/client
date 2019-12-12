@@ -9,6 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * Adapter for the User Profile screen
+ * Fills in User Profile page views with data.
+ */
+
+
 public class UserProfileScreenAdapter extends RecyclerView.Adapter<UserProfileScreenAdapter.UserProfileView> {
 
     private String[] mscores;

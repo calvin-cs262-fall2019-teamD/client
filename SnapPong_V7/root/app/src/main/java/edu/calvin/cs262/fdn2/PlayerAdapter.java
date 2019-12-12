@@ -15,13 +15,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+/**
+ * Adapter for the Player class- fills in Player information
+ */
+
 public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder> {
 
+    private final LayoutInflater mInflater;
     //cached copy of players
     private List<Player> mPlayers;
     private Context mContext;
-
-    private final LayoutInflater mInflater;
 
     public PlayerAdapter(Context context) {
         mContext = context;
@@ -37,7 +40,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
 
     @Override
     public void onBindViewHolder(@NonNull final PlayerViewHolder holder, int position) {
-        if (mPlayers != null){
+        if (mPlayers != null) {
             Player current = mPlayers.get(position);
             holder.elo.setText(current.getName());
         }
@@ -47,7 +50,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
         holder.rank.setText(String.valueOf(position + 4));
 
         //increase the change rate by 1
-        String increasedChangeRate = position+1 + "+";
+        String increasedChangeRate = position + 1 + "+";
 
         //changing the change rate to increase by 1
         holder.changingrate.setText(increasedChangeRate);
@@ -61,7 +64,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
         });
     }
 
-    void setPlayers (List<Player> players){
+    void setPlayers(List<Player> players) {
         mPlayers = players;
         notifyDataSetChanged();
     }
@@ -70,18 +73,25 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
      * This function is called many times, and when it is first called,
      * mPlayers has not been updated (means initially, it's null, and we can't return null so we
      * return 0
+     *
      * @return
      */
     @Override
     public int getItemCount() {
 
-        if (mPlayers != null){
+        if (mPlayers != null) {
             return mPlayers.size();
-        }
-        else {
+        } else {
             return 0;
         }
     }
+
+    /**
+     * Show the popup window for the leaderboard screen
+     *
+     * @param anchorview the view you're pressing for a popup
+     */
+
 
     private void showPopup(View anchorview) {
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
@@ -96,7 +106,7 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
         // If you need the PopupWindow to dismiss when when touched outside
         popupWindow.setBackgroundDrawable(new ColorDrawable());
 
-        int location[] = new int[2];
+        int[] location = new int[2];
 
         // Get the View's(the one that was clicked in the Fragment) location
         anchorview.getLocationOnScreen(location);
