@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">SnapPong</string>
+    <string name="user_profile">User Profile</string>
+    <string name="user_profile_screen">User Profile Screen</string>
+    <string name="logout_icon">Logout</string>
+    <string name="nav_profile">My Profile</string>
+    <string name="nav_leaderboard">Leaderboard</string>
+    <string name="nav_request_game">Request Game</string>
+    <string name="nav_logout">Logout</string>
+    <string name="question">Are you ready to compete?</string>
+    <string name="login_button">Log In</string>
+    <string name="snapPong">SnapPong</string>
+    <string name="login_prompt">Log in using your snapchat account</string>
+    <string name="pinpong_png_login">pingpong png displayed on login screen</string>
+    <string name="login_bitmoji">bitmoji png displayed on the login screen</string>
+    <string name="login">Login</string>
+    <string name="hint_word">Enter your score here (e.g. 5 and not 5-4)...</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="loginHelp1">1. Press the "Log in" button. This takes you to the Snapchat app.</string>
+    <string name="loginHelp2">
+        2. If you have a Snapchat account, enter your username and password and press the "Log in" button
+        (*If you do not have a Snapchat account, press the "Sign Up" button and follow the steps to
+        create a Snapchat account*).
+    </string>
+    <string name="loginHelp3">
+        3. Press the "Continue" button to complete the login. This should take
+        you to the Leaderboard page.
+    </string>
+
+    <string name="login_help">LOGIN HELP</string>
+    <string name="profile_help_header">PROFILE HELP</string>
+    <string name="profileHelp1">1. Press the \'My Profile\' icon on the top navigation bar.</string>
+    <string name="profileHelp2">2. This will take you to your profile page, in which you can view your winrate, ELO, and rank.</string>
+    <string name="other_players_records_header">OTHER PLAYERS RECORDS</string>
+    <string name="otherPlayershelp1">1. Go to your profile page by pressing the \'My Profile\' icon.</string>
+    <string name="otherPlayershelp2">2. Your game history is displayed below your profile information.</string>
+    <string name="usersProfilehelp1">1. Press the leaderboard icon to go to the leaderboard screen.</string>
+    <string name="userProfilehelp2">2. Press the profile image of the player you want to view the profile of, and this will take you to their profile page.</string>
+
+</resources>

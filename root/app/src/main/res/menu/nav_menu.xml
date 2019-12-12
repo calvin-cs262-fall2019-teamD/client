@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/user_profile_icon"
+            android:title="@string/nav_profile"
+            app:showAsAction="always"/>
+        <item
+            android:id="@+id/nav_leaderboard"
+            android:icon="@drawable/leaderboard_option"
+            android:title="@string/nav_leaderboard"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/nav_game_request"
+            android:icon="@drawable/game_request_option"
+            android:title="@string/nav_request_game"
+            app:showAsAction="always"/>
+        <item
+            android:id="@+id/help"
+            android:title="Help"
+            android:icon="@drawable/ic_help"
+            app:showAsAction="ifRoom"/>
+
+
+
+</menu>
