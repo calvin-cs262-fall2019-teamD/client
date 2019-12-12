@@ -49,7 +49,7 @@ public abstract class PlayerRoomDatabase extends RoomDatabase {
      */
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
         private final PlayerDao mDao;
-        String[] playernames = {"Bernard"};
+        String[] playernames = {};
 
         PopulateDbAsync(PlayerRoomDatabase db) {
             mDao = db.playerDao();
@@ -62,15 +62,17 @@ public abstract class PlayerRoomDatabase extends RoomDatabase {
             // Not needed if you only populate the database
             // when it is first created
             mDao.deleteAll();
+            if (playernames.length !=0){
+                for (int i =0; i <= playernames.length -1 ; i++){
 
-            for (int i =0; i <= playernames.length -1 ; i++){
+                    //we create a player with that particular name for each time
+                    Player player = new Player(playernames[i]);
 
-                //we create a player with that particular name for each time
-                Player player = new Player(playernames[i]);
-
-                //we insert that player into our Dao
-                mDao.insert(player);
+                    //we insert that player into our Dao
+                    mDao.insert(player);
+                }
             }
+
             return null;
         }
     }

@@ -145,7 +145,7 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
             changingrate = itemView.findViewById(R.id.changerate);
             elo = itemView.findViewById(R.id.elo);
             rank = itemView.findViewById(R.id.ranknumber);
-            winrate = itemView.findViewById(R.id.winrate);
+//            winrate = itemView.findViewById(R.id.winrate);
             profilecardview = itemView.findViewById(R.id.profilecard);
             bitmojiIcon = itemView.findViewById(R.id.playerbitmoji);
 

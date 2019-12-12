@@ -27,7 +27,7 @@
                 android:layout_width="80dp"
                 android:layout_height="67dp"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/bitmoji1" />
+                android:src="@drawable/me" />
 
             <TextView
                 android:id="@+id/score"
@@ -44,7 +44,7 @@
                 android:layout_width="80dp"
                 android:layout_height="67dp"
                 android:layout_marginStart="50dp"
-                android:src="@drawable/bitmoji1" />
+                android:src="@drawable/bitmoji2" />
 
 
         </LinearLayout>

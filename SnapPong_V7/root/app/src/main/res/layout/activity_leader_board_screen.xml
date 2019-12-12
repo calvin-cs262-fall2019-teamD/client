@@ -31,7 +31,7 @@
             android:layout_width="87dp"
             android:layout_height="103dp"
             android:layout_marginTop="16dp"
-            android:src="@drawable/bitmoji2"
+            android:src="@drawable/me"
             android:background="@android:color/holo_orange_light"
             android:onClick="profileClicked"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -106,7 +106,7 @@
             android:id="@+id/rank1name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="henri_prudhome"
+            android:text="benjuniour_26"
             android:textColor="@android:color/black"
             android:textSize="10sp"
             android:textStyle="bold"
@@ -137,7 +137,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:layout_marginLeft="48dp"
-            android:text="williams_serina"
+            android:text="lizzy_fancy"
             android:textStyle="bold"
             android:textColor="@android:color/black"
             android:textSize="10sp"
@@ -152,7 +152,7 @@
             android:background="@drawable/elorounded_rectangletop"
             android:backgroundTintMode="screen"
             android:gravity="center"
-            android:text="749506"
+            android:text="649408"
             android:textColor="@android:color/white"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -165,8 +165,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="60dp"
-            android:layout_marginRight="60dp"
-            android:text="mr_bond"
+            android:text="henri_pru"
             android:textColor="@android:color/black"
             android:textSize="10sp"
             android:textStyle="bold"
@@ -195,13 +194,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/black">
+        android:background="@android:color/black"
+        android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
         </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 

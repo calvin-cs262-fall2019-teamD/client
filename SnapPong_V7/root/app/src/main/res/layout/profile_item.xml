@@ -74,17 +74,15 @@
                 android:textColor="@android:color/white"
                 android:textSize="22sp" />
 
-            <Button
+            <TextView
                 android:id="@+id/winrate"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="66dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="50dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginEnd="15dp"
-                android:background="@android:color/holo_orange_light"
+                android:background="@drawable/elo_rect_recyclerview"
                 android:gravity="center"
-                android:text="Play"
+                android:text="90%"
                 android:textColor="@android:color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />

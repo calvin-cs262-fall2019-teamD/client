@@ -47,7 +47,7 @@ public class UserProfileScreenAdapter extends RecyclerView.Adapter<UserProfileSc
         public UserProfileView(@NonNull View itemView) {
             super(itemView);
             scoreTextView = itemView.findViewById(R.id.score);
-            winrateTextView = itemView.findViewById(R.id.winrate);
+//            winrateTextView = itemView.findViewById(R.id.winrate);
         }
     }
 }

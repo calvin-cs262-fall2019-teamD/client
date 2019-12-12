@@ -19,7 +19,7 @@ public class UserProfileScreen extends AppCompatActivity {
 
     RecyclerView recyclerview;
     ImageView profileImageView;
-    String[] thescores = {"2-21", "1-21", "21-5", "21-9", "2-21"};
+    String[] thescores = {"7-1"};
     String[] thewinrates = {"80", "60", "40", "84", "66"};
     UserProfileScreenAdapter adapter;
 
@@ -69,6 +69,13 @@ public class UserProfileScreen extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.nav_menu, menu);
+
+        //hiding the userprofile item and gamescreen icon since you shouldn't be able to use them on this page
+        MenuItem userprofile = menu.findItem(R.id.nav_profile);
+        userprofile.setVisible(false);
+
+        MenuItem gameScreen = menu.findItem(R.id.nav_game_request);
+        gameScreen.setVisible(false);
 
         // return true so that the menu pop up is opened
         return true;

@@ -37,6 +37,12 @@ public class GamePlayScreen extends AppCompatActivity {
                 //We get the data from our entry box and pass that through our intent
                 else{
                     String score = mScoreview.getText().toString();
+
+                    //before we insert the data into the database, we change the score to get the ELO
+                    int computedscore = Integer.parseInt(score) * 10000;
+
+                    //then we revert back the string and pass it into the database
+                    score = String.valueOf(computedscore);
                     replyIntent.putExtra(EXTRA_REPLY,score);
                     setResult(RESULT_OK,replyIntent);
                 }

@@ -18,7 +18,7 @@
             android:id="@+id/nav_game_request"
             android:icon="@drawable/game_request_option"
             android:title="@string/nav_request_game"
-            app:showAsAction="ifRoom"/>
+            app:showAsAction="always"/>
         <item
             android:id="@+id/help"
             android:title="Help"

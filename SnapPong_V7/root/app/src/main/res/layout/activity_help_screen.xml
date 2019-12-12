@@ -4,12 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.calvin.cs262.fdn2.HelpScreen">
+    tools:context="edu.calvin.cs262.fdn2.HelpScreen"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:text="@string/login_help"
+                style="@style/helpheaders" />
+
+            <TextView
+                android:text="@string/loginHelp1"
+                style="@style/helplayout" />
+            <TextView
+                android:text="@string/loginHelp2"
+                style="@style/helplayout" />
+
+            <TextView
+                android:text="@string/loginHelp3"
+                style="@style/helplayout" />
+
+            <TextView
+                android:text="@string/profile_help_header"
+                style="@style/helpheaders" />
+
+            <TextView
+                android:text="@string/profileHelp1"
+                style="@style/helplayout" />
+            <TextView
+                android:text="@string/profileHelp2"
+                style="@style/helplayout" />
 
 
- <TextView
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:inputType="textMultiLine"
-     />
+            <TextView
+                android:text="@string/profile_help_header"
+                style="@style/helpheaders" />
+
+            <TextView
+                android:text="@string/profileHelp1"
+                style="@style/helplayout" />
+            <TextView
+                android:text="@string/profileHelp2"
+                style="@style/helplayout" />
+
+            <TextView
+                android:text="@string/other_players_records_header"
+                style="@style/helpheaders" />
+
+            <TextView
+                android:text="@string/otherPlayershelp1"
+                style="@style/helplayout" />
+            <TextView
+                android:text="@string/otherPlayershelp2"
+                style="@style/helplayout" />
+
+            <TextView
+                android:text="USERS' PROFILES"
+                style="@style/helpheaders" />
+
+            <TextView
+                android:text="@string/usersProfilehelp1"
+                style="@style/helplayout" />
+
+            <TextView
+                android:text="@string/userProfilehelp2"
+                style="@style/helplayout" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
 </LinearLayout>

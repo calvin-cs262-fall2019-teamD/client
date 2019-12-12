@@ -197,6 +197,10 @@ public class LeaderBoardScreen extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.nav_menu, menu);
+
+        MenuItem leaderboard = menu.findItem(R.id.nav_leaderboard);
+        leaderboard.setVisible(false);
+
         // return true so that the menu pop up is opened
         return true;
     }

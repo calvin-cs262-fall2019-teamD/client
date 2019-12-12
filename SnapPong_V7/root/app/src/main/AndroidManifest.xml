@@ -15,7 +15,8 @@
             android:label="Help">
 
         </activity>
-        <activity android:name=".GamePlayScreen" />
+        <activity android:name=".GamePlayScreen"
+            android:label="Game Play"/>
 
         <meta-data
             android:name="com.snapchat.kit.sdk.clientId"
