@@ -72,6 +72,13 @@ public class GameRequestScreen extends AppCompatActivity {
         return true;
     }
 
+    /**Sends the user to the help page
+     */
+    public void gotoHelp(){
+        Intent helpIntent = new Intent(this, HelpScreen.class);
+        startActivity(helpIntent);
+    }
+
     /**
      * Decides what to do when you select a particular icon
      * @param item: the item you're clicking on
@@ -93,6 +100,10 @@ public class GameRequestScreen extends AppCompatActivity {
 
             case R.id.nav_profile:
                 gotoUserProfileScreen();
+                break;
+
+            case R.id.help:
+                gotoHelp();
                 break;
 
         }

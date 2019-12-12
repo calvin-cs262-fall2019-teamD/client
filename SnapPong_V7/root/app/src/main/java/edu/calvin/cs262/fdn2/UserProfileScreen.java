@@ -73,6 +73,12 @@ public class UserProfileScreen extends AppCompatActivity {
         // return true so that the menu pop up is opened
         return true;
     }
+    /**Sends the user to the help page
+     */
+    public void gotoHelp(){
+        Intent helpIntent = new Intent(this, HelpScreen.class);
+        startActivity(helpIntent);
+    }
 
     /**
      * Decides what to do when you select a particular icon
@@ -98,6 +104,9 @@ public class UserProfileScreen extends AppCompatActivity {
                 Toast.makeText(this,"Already viewing your profile", Toast.LENGTH_SHORT).show();
                 break;
 
+            case R.id.help:
+                gotoHelp();
+                break;
 
             default:
                 break;
